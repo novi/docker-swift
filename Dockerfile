@@ -1,12 +1,12 @@
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 
 ENV SWIFT_BRANCH development
-ENV SWIFT_VERSION DEVELOPMENT-SNAPSHOT-2016-09-19-a
-ENV SWIFT_PLATFORM ubuntu14.04
+ENV SWIFT_VERSION DEVELOPMENT-SNAPSHOT-2016-10-04-a
+ENV SWIFT_PLATFORM ubuntu16.04
 
 # Install related packages
 RUN apt-get update && \
-    apt-get install -y build-essential wget clang-3.6 libedit-dev python2.7 python2.7-dev libicu52 rsync libxml2 git uuid-dev && \
+    apt-get install -y build-essential wget clang libedit-dev python2.7 python2.7-dev libicu-dev rsync libxml2 git uuid-dev && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
@@ -14,7 +14,7 @@ RUN apt-get update && \
 RUN wget -q -O - https://swift.org/keys/all-keys.asc | gpg --import - && \
     gpg --keyserver hkp://pool.sks-keyservers.net --refresh-keys Swift
 
-# Install Swift Ubuntu 14.04 Snapshot
+# Install Swift Ubuntu Snapshot
 RUN SWIFT_ARCHIVE_NAME=swift-$SWIFT_VERSION-$SWIFT_PLATFORM && \
     SWIFT_URL=https://swift.org/builds/$SWIFT_BRANCH/$(echo "$SWIFT_PLATFORM" | tr -d .)/swift-$SWIFT_VERSION/$SWIFT_ARCHIVE_NAME.tar.gz && \
     wget $SWIFT_URL && \
