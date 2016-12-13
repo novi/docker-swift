@@ -1,12 +1,12 @@
 FROM ubuntu:16.04
 
 ENV SWIFT_BRANCH development
-ENV SWIFT_VERSION DEVELOPMENT-SNAPSHOT-2016-10-27-a
+ENV SWIFT_VERSION DEVELOPMENT-SNAPSHOT-2016-11-15-a
 ENV SWIFT_PLATFORM ubuntu16.04
 
 # Install related packages
 RUN apt-get update && \
-    apt-get install -y build-essential wget clang libedit-dev python2.7 python2.7-dev libicu-dev rsync libxml2 git uuid-dev && \
+    apt-get install -y build-essential wget clang libedit-dev python2.7 python2.7-dev libicu-dev rsync libxml2 git uuid-dev libcurl4-openssl-dev && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
