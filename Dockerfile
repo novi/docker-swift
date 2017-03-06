@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 
 ENV SWIFT_BRANCH swift-3.0.2-release
-ENV SWIFT_VERSION swift-3.0.2-RELEASE
+ENV SWIFT_VERSION 3.0.2-RELEASE
 ENV SWIFT_PLATFORM ubuntu16.04
 
 # Install related packages
