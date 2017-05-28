@@ -14,7 +14,7 @@ RUN apt-get -q update && \
     libssl-dev \
     libxml2 \
     git \
-    libcurl4-openssl-dev \
+    libcurl4-gnutls-dev \
     pkg-config \
     && update-alternatives --quiet --install /usr/bin/clang clang /usr/bin/clang-3.8 100 \
     && update-alternatives --quiet --install /usr/bin/clang++ clang++ /usr/bin/clang++-3.8 100 \
