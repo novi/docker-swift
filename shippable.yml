@@ -1,5 +1,0 @@
-build:
-    pre_ci:
-        - docker build -t testbuild .
-    ci:
-        - echo "Building $COMMIT"
