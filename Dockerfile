@@ -19,7 +19,7 @@ RUN export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true && ap
     && rm -r /var/lib/apt/lists/*
 
 
-RUN SWIFT_URL="https://www.dropbox.com/s/pgx4uts6w0gspl7/swift-LOCAL-2019-05-13-a.tar.gz?dl=1" \
+RUN SWIFT_URL="https://www.dropbox.com/s/hvjaejr8q3yrrf5/swift-LOCAL-2019-05-28-a.tar.gz?dl=1" \
     && apt-get update \
     && apt-get install -y curl \
     && curl -L $SWIFT_URL -o swift.tar.gz \
